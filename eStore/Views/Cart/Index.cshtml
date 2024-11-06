@@ -1,0 +1,72 @@
+﻿@using eStoreAPI.DTO
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    List<CartItem>? products = ViewData["objectList"] as List<CartItem>;
+}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+    }
+
+    thead {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Discount</th>
+            <th>Sum</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{double totalSum = 0;}
+        @foreach (var item in products)
+        {
+            // Calculate the total for the current item
+            double itemTotal = (double)(item.UnitPrice * item.Quantity) * (1 - item.Discount / 100);
+            totalSum += itemTotal; // Accumulate the total
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.Quantity</td>
+                <td>@item.Discount</td>
+                <td>@itemTotal$</td> 
+            </tr>
+        }
+    </tbody>
+    <h3>Total=@totalSum$</h3>
+    <form method="post" action="/Cart/ClearMyObjectListCookie">
+        <input type="submit" value="Clear Cart" />
+    </form>
+    
+</table>
+<form method="post" action="/Cart/CreateOrder">
+    <input type="hidden" name="total" value="@totalSum.ToString(System.Globalization.CultureInfo.InvariantCulture)" />
+    <div>Order Date: <input type="datetime" name="orderdate" value=@DateTime.Now readonly /></div>
+    <div>Required Date: <input type="datetime" name="requireddate" value=@DateTime.Now.AddDays(3) readonly /></div>
+    <input type="submit" value="Order" />
+</form>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BusinessObject.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@* 
+<p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<form asp-action="Index" method="get">
+        <input type="hidden" name="sort" value="s"/>
+    <button type="submit" class="btn btn-primary">Sort</button>
+</form>
+<form asp-action="Index" method="get">
+        <div>
+            <label>StartDate</label>
+            <input type="date" name="startdate" />
+        </div>
+
+        <div>
+            <label>EndDate</label>
+            <input type="date" name="enddate" />
+        </div>
+        
+    <button type="submit" class="btn btn-primary">Find</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShippedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequireDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+@*                 <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
+ *@                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+@*                 <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+ *@            </td>
+        </tr>
+}
+    </tbody>
+</table>
