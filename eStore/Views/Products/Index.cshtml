@@ -8,92 +8,89 @@
     var role = Context.Request.Cookies["Role"];
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<form asp-action="SearchByName" method="get">
-    <div class="form-group">
-        <label for="name">Product Name:</label>
-        <input type="text" id="name" name="name" class="form-control" required />
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Products</h1>
+        <a asp-action="Create" class="btn btn-success">Create New</a>
     </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-</form>
-<h2>Search Products by Price</h2>
 
-<form asp-action="SearchByPrice" method="get">
-    <div class="form-group">
-        <label for="price">Max Price:</label>
-        <input type="number" id="price" name="price" class="form-control" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-</form>
-@if (listpr != null && listpr.Count > 0)
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    ProductName
-                </th>
-                <th>
-                    UnitPrice
-                </th>
-                <th>
-                    UnitsInStock
-                </th>
+    <!-- Search Form by Name -->
+    <form asp-action="SearchByName" method="get" class="mb-3">
+        <div class="row">
+            <div class="col-md-8">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Search by product name" required />
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Search</button>
+            </div>
+        </div>
+    </form>
 
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
+    <!-- Search Form by Price -->
+    <form asp-action="SearchByPrice" method="get" class="mb-5">
+        <div class="row">
+            <div class="col-md-8">
+                <input type="number" id="price" name="price" class="form-control" placeholder="Search by max price" required />
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Search</button>
+            </div>
+        </div>
+    </form>
+
+    @if (listpr != null && listpr.Count > 0)
+    {
+        <div class="row">
             @foreach (var item in listpr)
             {
-                <tr>
-                    <td>
-                        @item.ProductName
-                    </td>
-                    <td>
-                        @item.UnitPrice
-                    </td>
-                    <td>
-                        @item.UnitsInStock
-                    </td>
-                    <td>
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 shadow-sm">
                         @if (item.ImageData != null && item.ImageData.Length > 0)
                         {
                             string base64Image = Convert.ToBase64String(item.ImageData);
-                            <img src="data:image/jpeg;base64,@base64Image" alt="Product Image" width="100" />
+                            <img src="data:image/jpeg;base64,@base64Image" class="card-img-top" alt="Product Image" style="height: 200px; object-fit: cover;" />
                         }
                         else
                         {
-                            <p>No image available</p>
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="No Image Available" style="height: 200px; object-fit: cover;" />
                         }
-                    </td>
-                    @* <td>
-            @item.Category.CategoryId)
-            </td> *@
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>|
-                        @if (role != "ADMIN")
-                        {
-                            <form method="post" action="/Products/AddToCookie">
-                                <input type="hidden" name="id" value="@item.ProductId" />
-                                <input type="number" name="quantity" max="@item.UnitsInStock" required placeholder="cannot exceeds @item.UnitsInStock" />
-                                <input type="submit" value="Add" />
-                            </form>
-                        }
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-else
-{
-    <p>No products found.</p>
-}
 
+                        <div class="card-body">
+                            <h5 class="card-title">@item.ProductName</h5>
+                            <p class="card-text">Price: <strong>$@item.UnitPrice</strong></p>
+                            <p class="card-text">In Stock: <strong>@item.UnitsInStock</strong></p>
+
+                            <div class="d-flex justify-content-between">
+                                <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-warning btn-sm">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-info btn-sm">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
+
+                            @if (role != "ADMIN")
+                            {
+                                <form method="post" action="/Products/AddToCookie" class="mt-2">
+                                    <input type="hidden" name="id" value="@item.ProductId" />
+                                    <div class="input-group">
+                                        <input type="number" name="quantity" class="form-control" max="@item.UnitsInStock" required placeholder="Qty (Max @item.UnitsInStock)" />
+                                        <button type="submit" class="btn btn-outline-success">Add</button>
+                                    </div>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center">No products found.</div>
+    }
+</div>
+
+<!-- Add custom CSS for layout adjustments -->
+<style>
+    .form-control, .btn {
+        margin-top: 10px;
+    }
+</style>

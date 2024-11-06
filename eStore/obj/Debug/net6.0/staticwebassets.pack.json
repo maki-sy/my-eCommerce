@@ -5,16 +5,284 @@
       "PackagePath": "staticwebassets\\eStore.bundle.scp.css"
     },
     {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\css\\animate.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\default-skin.css",
+      "PackagePath": "staticwebassets\\css\\default-skin.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\icomoon.css",
+      "PackagePath": "staticwebassets\\css\\icomoon.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\jquery-ui.css",
+      "PackagePath": "staticwebassets\\css\\jquery-ui.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\jquery.fancybox.min.css",
+      "PackagePath": "staticwebassets\\css\\jquery.fancybox.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\jquery.mCustomScrollbar.min.css",
+      "PackagePath": "staticwebassets\\css\\jquery.mCustomScrollbar.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\meanmenu.css",
+      "PackagePath": "staticwebassets\\css\\meanmenu.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\css\\nice-select.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\normalize.css",
+      "PackagePath": "staticwebassets\\css\\normalize.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
       "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\slick.css",
+      "PackagePath": "staticwebassets\\css\\slick.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\css\\style.css.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\css\\style.min.css"
     },
     {
       "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\fonts\\Berlin Sans FB Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Berlin Sans FB Bold.ttf"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\banner-bg.png",
+      "PackagePath": "staticwebassets\\images\\banner-bg.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\bluebg.jpg",
+      "PackagePath": "staticwebassets\\images\\bluebg.jpg"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\call-icon.png",
+      "PackagePath": "staticwebassets\\images\\call-icon.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\computer-img.png",
+      "PackagePath": "staticwebassets\\images\\computer-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\dress-shirt-img.png",
+      "PackagePath": "staticwebassets\\images\\dress-shirt-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\flag-france.png",
+      "PackagePath": "staticwebassets\\images\\flag-france.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\flag-uk.png",
+      "PackagePath": "staticwebassets\\images\\flag-uk.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\footer-logo.png",
+      "PackagePath": "staticwebassets\\images\\footer-logo.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\jhumka-img.png",
+      "PackagePath": "staticwebassets\\images\\jhumka-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\kangan-img.png",
+      "PackagePath": "staticwebassets\\images\\kangan-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\laptop-img.png",
+      "PackagePath": "staticwebassets\\images\\laptop-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\mail-icon.png",
+      "PackagePath": "staticwebassets\\images\\mail-icon.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\map-icon.png",
+      "PackagePath": "staticwebassets\\images\\map-icon.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\mobile-img.png",
+      "PackagePath": "staticwebassets\\images\\mobile-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\neklesh-img.png",
+      "PackagePath": "staticwebassets\\images\\neklesh-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\search-icon.png",
+      "PackagePath": "staticwebassets\\images\\search-icon.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\toggle-icon.png",
+      "PackagePath": "staticwebassets\\images\\toggle-icon.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\tshirt-img.png",
+      "PackagePath": "staticwebassets\\images\\tshirt-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\user-icon.png",
+      "PackagePath": "staticwebassets\\images\\user-icon.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\images\\women-clothes-img.png",
+      "PackagePath": "staticwebassets\\images\\women-clothes-img.png"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\jquery-3.0.0.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.0.0.min.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\jquery.mCustomScrollbar.concat.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.mCustomScrollbar.concat.min.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\modernizer.js",
+      "PackagePath": "staticwebassets\\js\\modernizer.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\plugin.js",
+      "PackagePath": "staticwebassets\\js\\plugin.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.min.js"
+    },
+    {
       "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\js\\slider-setting.js",
+      "PackagePath": "staticwebassets\\js\\slider-setting.js"
     },
     {
       "Id": "E:\\E\\LuyendePE\\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\\Assignment1_HE176623\\eStore\\wwwroot\\lib\\bootstrap\\LICENSE",
