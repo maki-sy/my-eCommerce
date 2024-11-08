@@ -57,7 +57,7 @@ namespace eStore.Controllers.Auth
                     Expires = DateTimeOffset.Now.AddMinutes(60)
                 });
 
-                return RedirectToAction("Index","Members");
+                return RedirectToAction("Index","Products");
             }
 
             Member? m = _context.Members.Where(x => x.Email == credentials.Email && x.Password == credentials.Password).FirstOrDefault();

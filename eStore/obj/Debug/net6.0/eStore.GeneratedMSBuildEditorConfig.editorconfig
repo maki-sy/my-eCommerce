@@ -54,6 +54,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/E/LuyendePE/2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)/Assignment1_HE176623/eStore/Views/MyOrders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlPcmRlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/E/LuyendePE/2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)/Assignment1_HE176623/eStore/Views/MyOrders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlPcmRlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/E/LuyendePE/2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)/Assignment1_HE176623/eStore/Views/MyProfile/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlQcm9maWxlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -100,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/E/LuyendePE/2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)/Assignment1_HE176623/eStore/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/E/LuyendePE/2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)/Assignment1_HE176623/eStore/Views/Products/_ProductListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcX1Byb2R1Y3RMaXN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/E/LuyendePE/2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)/Assignment1_HE176623/eStore/Views/Shared/Error.cshtml]

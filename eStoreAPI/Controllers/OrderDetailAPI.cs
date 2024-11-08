@@ -3,6 +3,7 @@ using BusinessObject.Models;
 using eStoreAPI.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NuGet.Packaging.Signing;
 
 namespace eStoreAPI.Controllers
@@ -29,6 +30,39 @@ namespace eStoreAPI.Controllers
                 return NotFound();
             }
             return _context.OrderDetails.ToList();
+        }
+        [HttpGet("{id}")]
+        public ActionResult<Order> GetOrderDetailById(int id)
+        {
+            // Retrieve the order by its ID from the database
+            List<OrderDetail> ods = _context.OrderDetails.Where(x=>x.OrderId == id).ToList(); 
+            if (ods == null)
+            {
+                return NotFound(); // Return 404 if the order is not found
+            }
+
+            return Ok(ods); // Return the found order
+        }
+        [HttpGet("getfullorder/{id}")]
+        public ActionResult<List<FullOrderDTO>> GetFullOrder(int id)
+        {
+            // Retrieve the order by its ID from the database
+            List<OrderDetail> ods = _context.OrderDetails.Where(x => x.OrderId == id).ToList();
+
+            if (ods == null)
+            {
+                return NotFound(); // Return 404 if the order is not found
+            }
+            List<FullOrderDTO> imgQuantityPairs = new List<FullOrderDTO>();
+            foreach (var product in ods) 
+            {
+                FullOrderDTO imgQuantityPair = new FullOrderDTO();
+                imgQuantityPair.ImageData = _context.Products.Find(product.ProductId).ImageData;
+                imgQuantityPair.Quantity = product.Quantity;
+                imgQuantityPair.ProductName = _context.Products.Find(product.ProductId).ProductName;
+                imgQuantityPairs.Add(imgQuantityPair);
+            }
+            return Ok(imgQuantityPairs); // Return the found order
         }
         [HttpPost]
         public IActionResult PostOrderDetail([FromBody] List<OrderDetailDTO> odDTOs)

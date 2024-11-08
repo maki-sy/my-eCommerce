@@ -301,3 +301,4 @@ E:\E\LuyendePE\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\Assignment1_HE17
 E:\E\LuyendePE\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\Assignment1_HE176623\eStore\obj\Debug\net6.0\eStore.pdb
 E:\E\LuyendePE\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\Assignment1_HE176623\eStore\obj\Debug\net6.0\eStore.genruntimeconfig.cache
 E:\E\LuyendePE\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\Assignment1_HE176623\eStore\obj\Debug\net6.0\ref\eStore.dll
+E:\E\LuyendePE\2024-10-01T15_46_12.789Z_Assignment1_HE176623(1)\Assignment1_HE176623\eStore\bin\Debug\net6.0\System.Formats.Asn1.dll

@@ -33,6 +33,34 @@ namespace eStoreAPI.Controllers
           }
             return _context.Orders.ToList();
         }
+        [HttpGet("shipped")]
+        public ActionResult<IEnumerable<Order>> GetShippedOrders()
+        {
+            if (_context.Orders == null)
+            {
+                return NotFound();
+            }
+            return _context.Orders.Where(s=>s.Status=="Shipped").ToList();
+        }
+        [HttpGet("cancelled")]
+        public ActionResult<IEnumerable<Order>> GetCancelledOrders()
+        {
+            if (_context.Orders == null)
+            {
+                return NotFound();
+            }
+            return _context.Orders.Where(s => s.Status == "Cancelled").ToList();
+        }
+        [HttpGet("shipping")]
+        public ActionResult<IEnumerable<Order>> GetShippingOrders()
+        {
+            if (_context.Orders == null)
+            {
+                return NotFound();
+            }
+            return _context.Orders.Where(s => s.Status == "Shipping").ToList();
+        }
+
         [HttpGet("getmyorders")]
         public ActionResult<IEnumerable<Order>> GetMyOrders(int id)
         {
@@ -63,10 +91,10 @@ namespace eStoreAPI.Controllers
             return _context.Orders.OrderByDescending(x=>x.Total).ToList();
         }
         [HttpGet("{id}")]
-        public IActionResult GetOrderById(int id)
+        public ActionResult<Order> GetOrderById(int id)
         {
             // Retrieve the order by its ID from the database
-            var order = _context.Orders.FirstOrDefault(o => o.OrderId == id);
+            Order order = _context.Orders.Find(id);
 
             if (order == null)
             {
@@ -81,12 +109,48 @@ namespace eStoreAPI.Controllers
             using (var context = new PRN231_AS1Context())
             {
                 Order o = _mapper.Map<Order>(oDTO);
+                o.Status = "Shipping";
                _context.Orders.Add(o);
                 _context.SaveChanges();
                 return CreatedAtAction(nameof(GetOrderById), new { id = o.OrderId }, o);
             }
         }
+        [HttpPost("cancel/{id}")]
+        public IActionResult CancelOrder(int id)
+        {
+            using (var context = new PRN231_AS1Context())
+            {
+                var order = context.Orders.Find(id);
+                if (order == null)
+                {
+                    return NotFound($"Order with ID {id} not found.");
+                }
 
+                order.Status = "Cancelled";
+                context.Orders.Update(order);
+                context.SaveChanges();
+
+                return Ok(new { Message = "Order cancelled successfully", OrderId = order.OrderId });
+            }
+        }
+        [HttpPost("done/{id}")]
+        public IActionResult DoneOrder(int id)
+        {
+            using (var context = new PRN231_AS1Context())
+            {
+                var order = context.Orders.Find(id);
+                if (order == null)
+                {
+                    return NotFound($"Order with ID {id} not found.");
+                }
+
+                order.Status = "Shipped";
+                context.Orders.Update(order);
+                context.SaveChanges();
+
+                return Ok(new { Message = "Order cancelled successfully", OrderId = order.OrderId });
+            }
+        }
         // PUT: api/OrderAPI/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

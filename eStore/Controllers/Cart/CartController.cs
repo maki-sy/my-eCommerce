@@ -72,7 +72,7 @@ namespace eStore.Controllers.Cart
                 MemberId = m.MemberId
             };
             BusinessObject.Models.Order o = _mapper.Map<BusinessObject.Models.Order>(orderDTO);
-
+            o.Status = "Shipping";
             if (o == null)
             {
                 return BadRequest("Order data is null.");

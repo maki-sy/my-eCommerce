@@ -5,11 +5,6 @@ namespace BusinessObject.Models
 {
     public partial class Order
     {
-        public Order()
-        {
-            OrderDetails = new HashSet<OrderDetail>();
-        }
-
         public int OrderId { get; set; }
         public int MemberId { get; set; }
         public DateTime OrderDate { get; set; }

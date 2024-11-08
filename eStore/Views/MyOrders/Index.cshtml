@@ -89,39 +89,13 @@
                     @Html.DisplayFor(modelItem => item.Total)
                 </td>
                 <td>
-                    @*                 <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
-                *@                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
-                    @if (role == "ADMIN")
-                    {
-                        <a asp-action="Decline" asp-route-id="@item.OrderId">Decline</a>
-                    }
-                    @if (role == "NORMAL")
-                    {
-                        <a onclick="cancelOrder(@item.OrderId)">Cancel</a>
-
-                    }
-                    <script>
-                        function cancelOrder(orderId) {
-                            $.ajax({
-                                url: 'http://localhost:5008/api/OrderAPI/cancel/${orderId}',  // Replace with the actual API endpoint if it differs
-                                type: 'POST',
-                                success: function (response) {
-                                    alert('Order cancelled successfully');
-                                    // Optionally, refresh the page or redirect
-                                    window.location.reload();
-                                },
-                                error: function (xhr, status, error) {
-                                    if (xhr.status === 405) {
-                                        alert("Method Not Allowed. Please check if the API endpoint is set to accept POST requests.");
-                                    } else {
-                                        alert("Failed to cancel the order: " + error);
-                                    }
-                                }
-                            });
-                        }
-                    </script>
-
+                    <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
+                 @if(item.Status!="Cancelled"){
+                    <a asp-action="Cancel" asp-route-id="@item.OrderId">Cancel</a>
+                 }
                 </td>
+
+
             </tr>
         }
     </tbody>

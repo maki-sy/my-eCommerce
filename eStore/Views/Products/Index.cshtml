@@ -9,65 +9,81 @@
 }
 
 <div class="container mt-5">
+    <!-- Header Section -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Products</h1>
-        <a asp-action="Create" class="btn btn-success">Create New</a>
+        <h1 class="display-6">Products</h1>
+        @if (role == "ADMIN")
+        {
+            <a asp-action="Create" class="btn btn-success btn-lg px-4">Create New</a>
+        }
     </div>
 
-    <!-- Search Form by Name -->
-    <form asp-action="SearchByName" method="get" class="mb-3">
-        <div class="row">
-            <div class="col-md-8">
-                <input type="text" id="name" name="name" class="form-control" placeholder="Search by product name" required />
-            </div>
+    <!-- Filter Form -->
+    <form asp-action="Filter" method="get" onsubmit="saveFilters()" class="mb-4 p-3 bg-light rounded shadow-sm">
+        <div class="row g-3">
             <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Search</button>
+                <input type="text" id="searchString" name="searchString" placeholder="Search Products" class="form-control" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" id="minPrice" name="minPrice" placeholder="Min Price" class="form-control" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" id="maxPrice" name="maxPrice" placeholder="Max Price" class="form-control" />
+            </div>
+            <div class="col-md-2">
+                <select id="category" name="category" class="form-select">
+                    <option value="">All Categories</option>
+                    @foreach (var category in (SelectList)ViewData["Categories"])
+                    {
+                        <option value="@category.Value">@category.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-2 d-grid">
+                <button type="submit" class="btn btn-primary">Filter</button>
             </div>
         </div>
     </form>
 
-    <!-- Search Form by Price -->
-    <form asp-action="SearchByPrice" method="get" class="mb-5">
-        <div class="row">
-            <div class="col-md-8">
-                <input type="number" id="price" name="price" class="form-control" placeholder="Search by max price" required />
-            </div>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Search</button>
-            </div>
-        </div>
-    </form>
-
+    <!-- Product Listing -->
     @if (listpr != null && listpr.Count > 0)
     {
         <div class="row">
             @foreach (var item in listpr)
             {
-                <div class="col-md-4 col-lg-3 mb-4">
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
                     <div class="card h-100 shadow-sm">
+                        <!-- Product Image -->
                         @if (item.ImageData != null && item.ImageData.Length > 0)
                         {
                             string base64Image = Convert.ToBase64String(item.ImageData);
-                            <img src="data:image/jpeg;base64,@base64Image" class="card-img-top" alt="Product Image" style="height: 200px; object-fit: cover;" />
+                            <img src="data:image/jpeg;base64,@base64Image" class="card-img-top img-fluid" alt="Product Image" style="height: 200px; object-fit: cover;" />
                         }
                         else
                         {
-                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="No Image Available" style="height: 200px; object-fit: cover;" />
+                            <img src="https://via.placeholder.com/150" class="card-img-top img-fluid" alt="No Image Available" style="height: 200px; object-fit: cover;" />
                         }
 
+                        <!-- Product Details -->
                         <div class="card-body">
+
                             <h5 class="card-title">@item.ProductName</h5>
                             <p class="card-text">Price: <strong>$@item.UnitPrice</strong></p>
                             <p class="card-text">In Stock: <strong>@item.UnitsInStock</strong></p>
-
-                            <div class="d-flex justify-content-between">
-                                <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-warning btn-sm">Edit</a>
-                                <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-info btn-sm">Details</a>
-                                <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-danger btn-sm">Delete</a>
-                            </div>
-
-                            @if (role != "ADMIN")
+                            <p class="card-text">Status: <strong>@item.Status</strong></p>
+                            @if (role == "ADMIN")
                             {
+                                <div class="d-flex justify-content-between">
+                                    <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-warning btn-sm">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-info btn-sm">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- Add to Cart Form -->
+
+
                                 <form method="post" action="/Products/AddToCookie" class="mt-2">
                                     <input type="hidden" name="id" value="@item.ProductId" />
                                     <div class="input-group">
@@ -77,6 +93,7 @@
                                 </form>
                             }
                         </div>
+
                     </div>
                 </div>
             }
@@ -88,9 +105,96 @@
     }
 </div>
 
+
 <!-- Add custom CSS for layout adjustments -->
 <style>
-    .form-control, .btn {
-        margin-top: 10px;
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .form-control, .form-select {
+        border-radius: 0.25rem;
+    }
+
+        .form-control::placeholder, .form-select::placeholder {
+            color: #6c757d;
+        }
+
+    .card {
+        transition: transform 0.2s ease;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .card-text strong {
+        color: #495057;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+    }
+
+    .input-group .form-control {
+        border-radius: 0;
+    }
+
+    .input-group button {
+        border-radius: 0;
+    }
+
+    .alert-warning {
+        background-color: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeeba;
     }
 </style>
+<script>
+    // Function to save filter values to localStorage
+    function saveFilters() {
+        const searchString = document.getElementById('searchString').value;
+        const minPrice = document.getElementById('minPrice').value;
+        const maxPrice = document.getElementById('maxPrice').value;
+        const category = document.getElementById('category').value;
+
+        // Save values to localStorage
+        localStorage.setItem('searchString', searchString);
+        localStorage.setItem('minPrice', minPrice);
+        localStorage.setItem('maxPrice', maxPrice);
+        localStorage.setItem('category', category);
+    }
+
+    // Function to load filter values from localStorage
+    function loadFilters() {
+        const searchString = localStorage.getItem('searchString');
+        const minPrice = localStorage.getItem('minPrice');
+        const maxPrice = localStorage.getItem('maxPrice');
+        const category = localStorage.getItem('category');
+
+        // Set the form values from localStorage
+        if (searchString !== null) {
+            document.getElementById('searchString').value = searchString;
+        }
+        if (minPrice !== null) {
+            document.getElementById('minPrice').value = minPrice;
+        }
+        if (maxPrice !== null) {
+            document.getElementById('maxPrice').value = maxPrice;
+        }
+        if (category !== null) {
+            document.getElementById('category').value = category;
+        }
+    }
+
+    // Call loadFilters on page load
+    window.onload = function () {
+        loadFilters();
+    }
+</script>

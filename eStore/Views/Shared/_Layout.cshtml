@@ -51,8 +51,8 @@
                     </ul>
 
                     <!-- Center-aligned Search Bar -->
-                    <form class="d-flex me-3" asp-action="Search" method="get">
-                        <input class="form-control me-2" type="search" name="query" placeholder="Search Products" aria-label="Search" required>
+                    <form class="d-flex me-3"asp-controller="Products" asp-action="Filter" method="get">
+                        <input class="form-control me-2" type="search" name="searchString" placeholder="Search Products" aria-label="Search" required>
                         <button class="btn btn-outline-light" type="submit">Search</button>
                     </form>
 
@@ -71,7 +71,7 @@
                                     {
                                         <li><a class="dropdown-item" asp-area="" asp-controller="MyProfile" asp-action="Index">My Profile</a></li>
                                         <li><a class="dropdown-item" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a></li>
-                                        <li><a class="dropdown-item" asp-area="" asp-controller="Orders" asp-action="GetMyOrders">My Orders</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="MyOrders" asp-action="Index">My Orders</a></li>
                                         <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Shop</a></li>
                                     }
                                     else

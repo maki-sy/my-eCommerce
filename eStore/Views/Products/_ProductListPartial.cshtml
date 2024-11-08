@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BusinessObject.Models.Product>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(product.ImageData)" class="card-img-top" alt="@product.ProductName" />
+                <div class="card-body">
+                    <h5 class="card-title">@product.ProductName</h5>
+                    <p class="card-text">$@product.UnitPrice</p>
+                    <p class="card-text">@product.UnitsInStock in stock</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

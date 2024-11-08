@@ -41,6 +41,18 @@ namespace eStoreAPI.Controllers
                 return Ok(_context.Products.ToList());
             }
         }
+        [HttpGet("{id}")]
+        public IActionResult GetProductById(int id)
+        {
+            using (var _context = new PRN231_AS1Context())
+            {
+                if (_context.Products == null)
+                {
+                    return NotFound();
+                }
+                return Ok(_context.Products.Find(id));
+            }
+        }
         [HttpGet("searchbyname")]
         public IActionResult SearchByName(string name)
         {
@@ -104,10 +116,44 @@ namespace eStoreAPI.Controllers
                         p.ImageData = memoryStream.ToArray();
                     }
                 }
+                p.Status = "Selling";
                 Console.WriteLine(p.ProductName+"  "+ p.UnitsInStock + "  " + p.UnitPrice + "  " + p.ImageData);
                 context.Products.Add(p);
                 context.SaveChanges();
                 return Ok("Product has been created");
+            }
+        }
+        [HttpGet("Filter")]
+        public IActionResult Filter(string? searchString, double? minPrice, double? maxPrice, int? category)
+        {
+            using (var context = new PRN231_AS1Context())
+            {
+                var productsQuery = context.Products.AsQueryable();
+
+                // Apply filters
+                if (!string.IsNullOrEmpty(searchString))
+                {
+                    productsQuery = productsQuery.Where(p => p.ProductName.Contains(searchString));
+                }
+
+                if (minPrice.HasValue)
+                {
+                    productsQuery = productsQuery.Where(p => p.UnitPrice >= minPrice.Value);
+                }
+
+                if (maxPrice.HasValue)
+                {
+                    productsQuery = productsQuery.Where(p => p.UnitPrice <= maxPrice.Value);
+                }
+
+                if (category.HasValue)
+                {
+                    productsQuery = productsQuery.Where(p => p.CategoryId == category.Value);
+                }
+
+                List<Product> filteredProducts = productsQuery.ToList();
+
+                return Ok(filteredProducts); //needs a list of products, cannot return notfound ...
             }
         }
         [HttpPut("{id}")]

@@ -44,9 +44,61 @@ namespace eStore.Controllers.Products
             };
             List<Product>? listP = JsonSerializer.Deserialize<List<Product>>(strData, options);
             ViewData["list"] = listP;
+            ViewData["Categories"] = new SelectList(_context.Categories, "CategoryId", "CategoryName");
             return View();
         }
+        public async Task<IActionResult> Filter(string? searchString, double? minPrice, double? maxPrice, int? category)
+        {
+            ProductApiUrl = "http://localhost:5008/api/ProductAPI/Filter?";
 
+            // Initialize a list to store query parameters
+            List<string> queryParams = new List<string>();
+
+            // Append query parameters only if they are not null
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                queryParams.Add($"searchString={Uri.EscapeDataString(searchString)}");
+            }
+
+            if (minPrice.HasValue)
+            {
+                queryParams.Add($"minPrice={minPrice.Value}");
+            }
+
+            if (maxPrice.HasValue)
+            {
+                queryParams.Add($"maxPrice={maxPrice.Value}");
+            }
+
+            if (category.HasValue)
+            {
+                queryParams.Add($"category={category.Value}");
+            }
+
+            // Combine all the query parameters with '&'
+            if (queryParams.Any())
+            {
+                ProductApiUrl += string.Join("&", queryParams);
+            }
+
+            // Make the API request
+            HttpResponseMessage response = await client.GetAsync(ProductApiUrl);
+
+            // Handle the response
+            string strData = await response.Content.ReadAsStringAsync();
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            List<Product>? listP = JsonSerializer.Deserialize<List<Product>>(strData, options);
+
+            // Pass the list to the view
+            ViewData["list"] = listP;
+            ViewData["Categories"] = new SelectList(_context.Categories, "CategoryId", "CategoryName");
+
+            return View("Index");
+        }
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
